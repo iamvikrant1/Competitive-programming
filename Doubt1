@@ -1,0 +1,94 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+
+class sortt
+{
+
+public:
+
+  int a[10],m,i;
+
+sortt()
+{
+  cout<<"How many numbers you want to enter:- ";
+  cin>>m;
+
+  while(m--)
+  {
+    cout<<"Enter "<<m<<" th "<<" elements :-";
+    cin>>a[m];
+  }
+
+
+}
+  int hl();
+  int sor();
+  int sw_sor();
+
+}s;
+
+int  main()
+{
+  int d;
+  cout<<"Which function you want to perform  \n\n 1. Sort \t 2. Highest and Lowest \t 3. Sort and Swap function";
+  cin>>d;
+
+    switch(d)
+    {
+      case 2:   s.hl();
+              break;
+
+      case 1:   s.sor();
+              break;
+
+      case 3:   s.sw_sor();
+              break;
+      default: cout<<"End";
+              break;
+    }
+
+    return 0;
+}
+
+int sortt::hl()
+{
+  sort(s.a,s.a+10);
+
+  cout<<"\n\nLargest number is:- "<<s.a[9];
+  cout<<"\t Smallest number is:- "<<s.a[0];
+
+return 0;
+}
+
+int sortt::sor()
+{
+  sort(s.a,s.a+10);
+  cout<<"Sorted numbers are:- ";
+
+  for(i=0;i<m;i++)
+  {
+    cout<<a[i];
+  }
+
+  return 0;
+}
+
+int sortt::sw_sor()
+{
+  sort(s.a,s.a+10);
+
+  for(i=0;i<m;i++)
+  {
+    for(int j=m;j>0;j--)
+    {
+      swap(s.a[i],s.a[j]);
+    }
+ }
+ for(i=0;i<m;i++)
+ {
+   cout<<a[i];
+ }
+
+  return 0;
+}
