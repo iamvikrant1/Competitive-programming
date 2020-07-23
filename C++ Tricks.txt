@@ -1,0 +1,51 @@
+Loop in C-string:
+char s[100];
+for (int i = 0; s[i]; ++i) { ... }
+This is extremely useful (also avoids the strlen usage, that you could forget is O(n) and put on for condition).
+___________________________________________________________________________________________________________________________________________
+
+Testing if not negative 1:
+if (~x) { ... }
+In competitive programming we tend to write as little as possible, só a simple x ! = -1 can be shortened to 2 characters.
+___________________________________________________________________________________________________________________________________________
+More than one operation per line
+if (dist[v] > dist[u] + w)
+	dist[v] = dist[u] + w, q.push(v);
+Many people don’t know this, but you can have statements split by commas. This I tend to use in every problem I solve, 
+it reduces the code and avoids the use of semicolons.
+___________________________________________________________________________________________________________________________________________
+Order array without losing original order
+int a[100], p[100];
+// receive input
+for (int i = 0; i < n; ++i) scanf("%d", &a[i]), p[i] = i;
+sort(p, p+n, [=](int i, int j) { return a[i] < a[j]; });
+___________________________________________________________________________________________________________________________________________
+Instead of if(cond) x++ you can write x += cond. 
+(C specification doesn’t guarantee that true constant is equal to 1, but for competitive programming you can assume it’ll work.)
+___________________________________________________________________________________________________________________________________________
+map <int, vector< pair<int,int> > > myMap;
+It means you have a map where the primary key is an integer and the corresponding value of a key is a vector which again contains 
+pair of integers.
+Now, to iterate somewhere inside the code, you could use C++ iterator to declare iterator for this map and say for example you 
+want to point to the beginning element:
+
+map<int, vector< pair<int,int> > > :: iterator it = myMap.begin();
+
+auto it = myMap.begin();
+After finding out about auto, I don’t use the previous way anymore
+___________________________________________________________________________________________________________________________________________
+C++11 has a function called to_string(). I was really happy to see this function when I encountered it for the first time.
+
+int a=12;
+string x=to_string(a);
+___________________________________________________________________________________________________________________________________________
+(y>0)?(doSomething();):(doSomethingElse(););
+___________________________________________________________________________________________________________________________________________
+printf("%d\n",printf("%d\n",100));
+___________________________________________________________________________________________________________________________________________
+a ^= b; b ^= a; a ^= b;
+___________________________________________________________________________________________________________________________________________
+
+
+
+
